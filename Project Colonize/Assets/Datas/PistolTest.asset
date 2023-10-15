@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9096ffab31e698846b99668cd7cb70cf, type: 3}
-  m_Name: WeaponTest
+  m_Name: PistolTest
   m_EditorClassIdentifier: 
   itemVisual: {fileID: 21300000, guid: e8f0f305e88b65e418a48b1c4a0c44ce, type: 3}
   weaponVisual: {fileID: 21300000, guid: a50c588828e7eb24aa45c5cfc4cabe5c, type: 3}
-  transformOffset: {x: 0, y: 0}
+  transformOffset: {x: 0.2, y: 0}

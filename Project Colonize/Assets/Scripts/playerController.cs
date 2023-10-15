@@ -31,7 +31,7 @@ public class playerController : MonoBehaviour
 
     private void LateUpdate()
     {
-        AimControl();
+        //AimControl();
     }
 
     private void AimControl()
