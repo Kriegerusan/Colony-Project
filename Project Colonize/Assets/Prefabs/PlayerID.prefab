@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8232562270500706725}
   - component: {fileID: 2525754023429540981}
+  - component: {fileID: 7018563170849754644}
   m_Layer: 0
   m_Name: HitBox
   m_TagString: Untagged
@@ -61,6 +62,19 @@ PolygonCollider2D:
       - {x: -0.1, y: 0.3}
       - {x: -0.1, y: 0}
       - {x: 0.1, y: 0}
+--- !u!114 &7018563170849754644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759065751666201434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b0b79f1413eccb47ad37f891fe11235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!1 &8549722342475113484
 GameObject:
   m_ObjectHideFlags: 0
