@@ -7,12 +7,16 @@ public class playerController : MonoBehaviour
 
     [SerializeField] private Camera playerCamera;
     [SerializeField] private GameObject weaponPivot;
-    [SerializeField] private SpriteRenderer playerSprite;
     [SerializeField] private float moveSpeed;
 
+    private SpriteRenderer playerSprite;
     private Vector2 mousePosition;
     private Vector2 moveDirection;
 
+    private void Awake()
+    {
+        playerSprite = GetComponent<SpriteRenderer>();
+    }
 
     private void Update()
     {
