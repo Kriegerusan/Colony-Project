@@ -8,6 +8,11 @@ public abstract class Destructible : MonoBehaviour
     [SerializeField] protected int maxHealth;
     protected int health;
 
-    public abstract void TakeDamage(int amount, string source);
+    protected void Initialise()
+    {
+        health = maxHealth;
+    }
 
+    public abstract void TakeDamage(int amount, string source);
+    public abstract void Repair(int amount);
 }

@@ -29,4 +29,8 @@ public class Farmable_Test : Destructible
         Debug.Log("degats a l'entite " + gameObject.name + "recu de : " + damageSource);
     }
 
+    public override void Repair(int amount)
+    {
+        throw new System.NotImplementedException();
+    }
 }

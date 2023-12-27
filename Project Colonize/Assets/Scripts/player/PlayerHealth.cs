@@ -89,4 +89,8 @@ public class PlayerHealth : Destructible
         thirst = maxThirst;
     }
 
+    public override void Repair(int amount)
+    {
+        throw new System.NotImplementedException();
+    }
 }
