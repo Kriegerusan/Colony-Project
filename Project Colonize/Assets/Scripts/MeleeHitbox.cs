@@ -17,7 +17,7 @@ public class MeleeHitbox : MonoBehaviour
         if(collision.tag == "Ressources")
         {
             Debug.Log($"hit {collision.name}");
-            collision.GetComponent<Destructible>().TakeDamage(this.GetComponentInParent<ToolBehaviour>().Damages,"null");
+            collision.GetComponentInParent<Destructible>().TakeDamage(this.GetComponentInParent<ToolBehaviour>().Damages,"null");
         }
     }
 }

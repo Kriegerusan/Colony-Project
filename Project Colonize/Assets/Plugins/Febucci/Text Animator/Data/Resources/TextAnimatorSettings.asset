@@ -27,3 +27,4 @@ MonoBehaviour:
     enabled: 1
     openingSymbol: 60
     closingSymbol: 62
+  defaultStyleSheet: {fileID: 11400000, guid: 4d69dfd76dc438143a2488be119d8653, type: 2}
