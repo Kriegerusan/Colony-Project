@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,16 +16,14 @@ public class DropRessources : MonoBehaviour
     bool isProtected;
     GameObject nearestPlayer;
     float nearestPlayerMagnitude;
+    //GameObject selectedPlayer;
+    float detectionRadiusSqrt;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
         isProtected = true;
+        detectionRadiusSqrt = MathF.Sqrt(detectionRadius);
     }
 
     // Update is called once per frame
@@ -39,10 +38,19 @@ public class DropRessources : MonoBehaviour
             }
         }
 
-        if (!isProtected && nearestPlayerMagnitude <= detectionRadius)
+        if (!isProtected)
         {
-            MoveToNearestPlayer();
+            if(GetPlayerDistance(nearestPlayer.transform.position) <= detectionRadiusSqrt)
+            {
+                MoveToNearestPlayer(true);
+            }else
+            {
+                MoveToNearestPlayer(false);
+            }
+            
+
         }
+
     }
 
     private void FixedUpdate()
@@ -50,29 +58,44 @@ public class DropRessources : MonoBehaviour
         FindNearestPlayer();
     }
 
-    void MoveToNearestPlayer()
+    void MoveToNearestPlayer(bool active)
     {
-        rb.velocity = (nearestPlayer.transform.position - transform.position).normalized * moveSpeed;
+        if (active)
+        {
+            rb.velocity = (nearestPlayer.transform.position - transform.position).normalized * moveSpeed;
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
+        
     }
 
     void FindNearestPlayer()
     {
+        //a remplacer par OnTriggerEnter et OnTriggerExit !
         foreach(playerController player in FindObjectsOfType<playerController>())
         {
             if (nearestPlayer == null)
             {
                 nearestPlayer = player.gameObject;
-                nearestPlayerMagnitude = (player.gameObject.transform.position - gameObject.transform.position).magnitude;
+                nearestPlayerMagnitude = GetPlayerDistance(player.transform.position);
             }
             else
             {
-                if (player.gameObject.transform.position.magnitude < nearestPlayerMagnitude)
+                if (GetPlayerDistance(player.transform.position) < nearestPlayerMagnitude)
                 {
                     nearestPlayer = player.gameObject;
-                    nearestPlayerMagnitude = (player.gameObject.transform.position - gameObject.transform.position).magnitude;
                 }
+                else { return; }
             }
         }
+    }
+
+    float GetPlayerDistance(Vector2 target)
+    {
+        float magnitude = (target - (Vector2)transform.position).sqrMagnitude;
+        return magnitude;
     }
 
 
