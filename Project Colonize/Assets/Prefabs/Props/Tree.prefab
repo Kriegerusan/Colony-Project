@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 5242980264075356473}
   m_Layer: 0
   m_Name: Hitbox
-  m_TagString: Ressources
+  m_TagString: Hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

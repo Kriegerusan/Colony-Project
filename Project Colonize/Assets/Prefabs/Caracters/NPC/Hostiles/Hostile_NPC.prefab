@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7145347156025028138}
   m_Layer: 0
   m_Name: HitBox
-  m_TagString: Untagged
+  m_TagString: Hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 1315265553728933000}
   - component: {fileID: 7972254916073985737}
   - component: {fileID: 7702015772221253496}
+  - component: {fileID: 6043216993165810276}
   m_Layer: 0
   m_Name: Hostile_NPC
   m_TagString: Untagged
@@ -197,3 +198,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &6043216993165810276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7691592804417972585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 195a36d7d12d59944b62fb1b1fb28129, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  damageResistance: 25

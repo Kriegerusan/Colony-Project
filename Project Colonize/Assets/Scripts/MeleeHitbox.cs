@@ -14,10 +14,10 @@ public class MeleeHitbox : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Ressources")
+        if(collision.tag == "Hitbox")
         {
-            Debug.Log($"hit {collision.name}");
-            collision.GetComponentInParent<Destructible>().TakeDamage(this.GetComponentInParent<ToolBehaviour>().Damages,"null");
+            Debug.Log($"hit {collision.transform.parent}");
+            collision.GetComponentInParent<Destructible>().TakeDamageWithResistance(this.GetComponentInParent<ToolBehaviour>().Damages);
         }
     }
 }

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//classe obsolete.
 public class Hitbox : MonoBehaviour
 {
 
